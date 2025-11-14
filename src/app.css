@@ -1,0 +1,82 @@
+/* stylelint-disable at-rule-no-unknown */
+/* Apply base tailwind styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Apply our theme colors */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+  }
+
+  /* Style for section wrapper */
+  section {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 64rem; /* approx Tailwind max-w-5xl */
+    padding-left: 1.5rem; /* px-6 */
+    padding-right: 1.5rem; /* px-6 */
+    padding-top: 5rem; /* py-20 */
+    padding-bottom: 5rem; /* py-20 */
+  }
+
+  @media (min-width: 768px) {
+    section {
+      padding-top: 7rem; /* md:py-28 */
+      padding-bottom: 7rem; /* md:py-28 */
+    }
+  }
+
+  /* Section heading style */
+  .section-heading {
+    margin-bottom: 3rem; /* mb-12 */
+    text-align: center; /* text-center */
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    line-height: 2.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-heading {
+      font-size: 2.25rem; /* md:text-4xl */
+      line-height: 2.5rem;
+    }
+  }
+
+  .section-heading::after {
+    content: '';
+    margin-left: auto; /* mx-auto */
+    margin-right: auto;
+    margin-top: 1rem; /* mt-4 */
+    display: block;
+    height: 0.25rem; /* h-1 */
+    width: 4rem; /* w-16 */
+    border-radius: 9999px; /* rounded-full */
+    background: var(--color-accent);
+  }
+
+  /* Base styles for the animated sections */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .scroll-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* particles are rendered via canvas and positioned with inline class (-z-10) */
+
+  @keyframes shimmer {
+    0% { transform: translateX(-110%); opacity: 0; }
+    50% { transform: translateX(0%); opacity: 0.12; }
+    100% { transform: translateX(110%); opacity: 0; }
+  }
+}
+
+/* stylelint-enable at-rule-no-unknown */

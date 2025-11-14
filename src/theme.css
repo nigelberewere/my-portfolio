@@ -1,0 +1,50 @@
+/* This file defines the CSS variables for the light and dark themes.
+  The theme is toggled by adding/removing the `data-theme="light"` attribute
+  on the `<html>` element.
+*/
+
+:root {
+  /* Dark Mode (Default) */
+  --color-bg: #0d1117;
+  --color-text: #c9d1d9;
+  --color-heading: #ffffff;
+  --color-accent: #00ffc6; /* Neon Cyan */
+  --color-accent-hover: #00e6b4;
+  --color-panel: #161b22;
+  --color-panel-border: #30363d;
+  --color-success: #238636;
+  --color-error: #da3633;
+}
+
+[data-theme='light'] {
+  /* Light Mode */
+  --color-bg: #ffffff;
+  --color-text: #24292e;
+  --color-heading: #000000;
+  --color-accent: #007a5f; /* Darker, accessible green */
+  --color-accent-hover: #00634c;
+  --color-panel: #f6f8fa;
+  --color-panel-border: #d0d7de;
+  --color-success: #1a7431;
+  --color-error: #d73a49;
+}
+
+/* Base body styles */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
