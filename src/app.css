@@ -58,19 +58,18 @@
     border-radius: 9999px; /* rounded-full */
     background: var(--color-accent);
   }
-
-  /* Base styles for the animated sections */
-  /* DEFAULT STATE: Visible & Static (Safe for Bots & Accessibility) */
+  /* DEFAULT STATE: Visible & Static (Safe for Bots & Google) */
+  /* This ensures Google sees your content immediately without scrolling */
   .scroll-animate {
     opacity: 1;
     transform: translateY(0);
   }
 
-  /* OPTIONAL STATE: Only animate if the user has NO motion preference */
+  /* ANIMATION STATE: Only hide & animate if the user is a human */
   @media (prefers-reduced-motion: no-preference) {
     .scroll-animate {
-      opacity: 0; /* Hide initially */
-      transform: translateY(20px); /* Push down slightly */
+      opacity: 0; /* Start hidden */
+      transform: translateY(20px); /* Start slightly down */
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
