@@ -5,10 +5,20 @@ import React, { useEffect, useRef, useState } from 'react';
 // - type: 'macbook' | 'ipad' | 'iphone'
 // - src: image src or demo URL
 // - useIframe: boolean -> try to render iframe when true, fallback to image
+// DeviceFrame: shows either an iframe (live demo) or an image preview.
+// For security and crawler/preview stability we avoid using iframes for
+// third-party/demo URLs by default (they can inject scripts/CSS and trigger
+// CORS/sandbox issues). If you need to allow a specific host, add it to
+// `IFRAME_WHITELIST` below.
 export default function DeviceFrame({ type = 'macbook', src, useIframe = false, title = '' }) {
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [iframeTimedOut, setIframeTimedOut] = useState(false);
   const timeoutRef = useRef(null);
+
+  // Whitelist hosts that are safe to embed as iframes (add domains here if needed)
+  const IFRAME_WHITELIST = [
+    // example: 'your-trusted-domain.com'
+  ];
 
   useEffect(() => {
     // reset state when src/useIframe changes
@@ -32,9 +42,12 @@ export default function DeviceFrame({ type = 'macbook', src, useIframe = false, 
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
   };
 
+  // Allow embedding when the caller requested an iframe (useIframe=true)
+  const canUseIframe = Boolean(useIframe && src);
+
   const screenContent = (
     <div className="relative h-full w-full bg-background">
-      {useIframe && src ? (
+      {canUseIframe && src ? (
         <iframe
           src={src}
           title={title || 'Project preview'}
@@ -48,7 +61,7 @@ export default function DeviceFrame({ type = 'macbook', src, useIframe = false, 
       )}
 
       {/* overlay for iframe fallback / open in new tab */}
-      {useIframe && src && (iframeTimedOut || !iframeLoaded) && (
+      {canUseIframe && src && (iframeTimedOut || !iframeLoaded) && (
         <div className="absolute inset-0 flex items-end justify-end p-3">
           <a
             href={src}
