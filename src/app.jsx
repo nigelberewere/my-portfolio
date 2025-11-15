@@ -34,6 +34,9 @@ function App() {
           <meta name="author" content="Nigel Berewere" />
           <meta name="robots" content="index, follow" />
           <link rel="canonical" href="https://nigelberewere.me/" />
+          {/* Favicon (single 192x192 PNG) */}
+          <link rel="icon" type="image/png" href="/assets/icon/favicon.png" sizes="192x192" />
+          <link rel="apple-touch-icon" href="/assets/icon/favicon.png" sizes="192x192" />
 
           {/* Open Graph */}
           <meta property="og:title" content="Nigel Berewere — Full-Stack Developer & Computer Science Student" />
