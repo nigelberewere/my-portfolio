@@ -88,4 +88,9 @@
   }
 }
 
-/* stylelint-enable at-rule-no-unknown */
+@media print, (prefers-reduced-motion: reduce) {
+  .scroll-animate {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
