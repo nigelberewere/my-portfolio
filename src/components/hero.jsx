@@ -114,6 +114,11 @@ export default function Hero() {
 
       <div className="z-10 flex flex-col items-center px-6">
         <div className="w-full max-w-3xl p-6 relative">
+          {/* --- SEO FIX START --- */}
+          {/* Visible to crawlers and screen readers, hidden visually */}
+          <h1 className="sr-only">Nigel Berewere - Full-Stack Developer (Java, Flutter, React)</h1>
+          {/* --- SEO FIX END --- */}
+
           <TypeAnimation
             sequence={[
               "> hi, i'm Nigel Berewere",
@@ -121,9 +126,9 @@ export default function Hero() {
               "> full-stack developer (html, css, js, java, flutter)",
               2000,
             ]}
-            wrapper="h1"
+            wrapper="span" /* Changed from 'h1' to 'span' to avoid duplicate H1s */
             speed={50}
-            className="font-mono text-2xl text-accent md:text-4xl"
+            className="font-mono font-bold text-2xl text-accent md:text-4xl"
             repeat={Infinity}
             cursor={true}
           />

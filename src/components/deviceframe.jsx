@@ -1,23 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-// Simple DeviceFrame component supports 'macbook', 'ipad', 'iphone'
-// Props:
-// - type: 'macbook' | 'ipad' | 'iphone'
-// - src: image src or demo URL
-// - useIframe: boolean -> try to render iframe when true, fallback to image
-// DeviceFrame: shows either an iframe (live demo) or an image preview.
-// For security and crawler/preview stability we avoid using iframes for
-// third-party/demo URLs by default (they can inject scripts/CSS and trigger
-// CORS/sandbox issues). If you need to allow a specific host, add it to
-// `IFRAME_WHITELIST` below.
+
 export default function DeviceFrame({ type = 'macbook', src, useIframe = false, title = '' }) {
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [iframeTimedOut, setIframeTimedOut] = useState(false);
   const timeoutRef = useRef(null);
 
-  // Whitelist hosts that are safe to embed as iframes (add domains here if needed)
   const IFRAME_WHITELIST = [
-    // example: 'your-trusted-domain.com'
   ];
 
   useEffect(() => {

@@ -1,11 +1,3 @@
-/* This is the single source of truth for your projects.
-  Add/remove/edit projects here, and the website will automatically update.
-  
-  "solution" is an array of content blocks.
-  - { type: 'text', value: '...' } for a paragraph.
- */
-  
-
 // --- FEATURED PROJECTS ---
 export const featuredProjects = [
   {
@@ -156,7 +148,7 @@ export const otherProjects = [
       'A RESTful API for a basic e-commerce site built with Java and Spring Boot, featuring product, cart, and order endpoints.',
     tags: ['Java', 'Spring Boot', 'API', 'MySQL'],
     links: {
-      repo: 'https://github.com/nigelberewere', // TODO: Update link
+      repo: 'https://github.com/nigelberewere',
     },
   },
   {

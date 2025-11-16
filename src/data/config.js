@@ -1,11 +1,10 @@
-// This file contains the primary configuration for your site
-// Edit this file to change your name, email, links, and resume path
+// This file contains the primary configuration for the site
 
 export const siteConfig = {
   name: 'Nigel Berewere',
   role: 'Full-Stack Developer',
   email: 'nigelberewere@gmail.com',
-  resumePath: '/assets/Nigel_Berewere_Resume.pdf', // Path to your resume in the `public` folder
+  resumePath: '/assets/Nigel_Berewere_Resume.pdf', 
   links: {
     github: 'https://github.com/nigelberewere',
     linkedin: 'https://www.linkedin.com/in/nigelberewere/',

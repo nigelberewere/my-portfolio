@@ -59,7 +59,6 @@
     background: var(--color-accent);
   }
   /* DEFAULT STATE: Visible & Static (Safe for Bots & Google) */
-  /* This ensures Google sees your content immediately without scrolling */
   .scroll-animate {
     opacity: 1;
     transform: translateY(0);
