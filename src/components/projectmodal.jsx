@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import DeviceFrame from './deviceframe';
+import { useTheme } from '../hooks/usetheme.jsx';
 import Prism from 'prismjs';
 import { FiGithub, FiExternalLink, FiX } from 'react-icons/fi';
-import '../prism-theme.css'; // Import custom Prism theme
+import '../prism-theme.css';
 
 export default function ProjectModal({ project, onClose }) {
+  const { theme } = useTheme();
   // Handle keyboard escape key
   useEffect(() => {
     const handleEsc = (event) => {
@@ -67,9 +69,18 @@ export default function ProjectModal({ project, onClose }) {
         {/* Modal Content */}
         <div className="flex-grow overflow-y-auto p-6">
           <div className="mb-6 flex justify-center">
+            {/* Choose device src; for the School Portal show themed dashboard images */}
             <DeviceFrame
               type={project.device || 'macbook'}
-              src={project.links?.demo || project.image}
+              src={
+                project.links?.demo
+                  ? project.links.demo
+                  : project.id === 'school-portal'
+                  ? theme === 'light'
+                    ? '/assets/images/dashboard_light.png'
+                    : '/assets/images/dashboard_dark.png'
+                  : project.image
+              }
               useIframe={Boolean(project.links?.demo)}
               title={project.title}
             />
@@ -99,6 +110,21 @@ export default function ProjectModal({ project, onClose }) {
             {project.solution.map((item, index) => (
               <div key={index}>{renderContent(item)}</div>
             ))}
+
+            
+            {project.id === 'school-portal' && (
+              <div className="my-6 flex justify-center">
+                <img
+                  src={
+                    theme === 'light'
+                      ? '/assets/images/dashboard_light.png'
+                      : '/assets/images/dashboard_dark.png'
+                  }
+                  alt="School Portal dashboard screenshot"
+                  className="max-w-full rounded-md shadow-md"
+                />
+              </div>
+            )}
 
             <h3 className="mt-6 font-mono text-lg font-bold text-accent">
               Impact

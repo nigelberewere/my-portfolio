@@ -1,5 +1,6 @@
 import { TypeAnimation } from 'react-type-animation';
 import { useCallback, useMemo, useEffect, useState } from 'react';
+import Lottie from 'lottie-react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import { FiArrowDown } from 'react-icons/fi';
@@ -134,6 +135,24 @@ export default function Hero() {
           />
         </div>
 
+        {/* Lottie animation: keyboard with hands typing. */}
+        {/* Drop the animation JSON at public/assets/lottie/keyboard-typing.json */}
+        {/** Load at runtime so missing file won't break the build. */}
+        {/** Accessible: aria-hidden since it's decorative; screen readers already have the sr-only H1. */}
+        {/** Size: responsive container. */}
+        <div className="mt-6 w-full flex justify-center">
+          <div className="w-full max-w-md">
+            {/** animationData is loaded in effect below and stored in state */}
+            {/** If not available, this area will simply be empty */}
+            {/** The fetch is done in an effect so build doesn't require the file */}
+            {/** See the useEffect above for loading logic */}
+            {/** Render Lottie when animationData is present */}
+            {typeof window !== 'undefined' && (
+              <AnimationLoader />
+            )}
+          </div>
+        </div>
+
         <p className="mt-6 max-w-xl text-lg text-text md:text-xl">
           I build reliable web and mobile applications from concept to launch.
         </p>
@@ -163,5 +182,44 @@ export default function Hero() {
         <FiArrowDown size={24} className="text-accent" />
       </a>
     </section>
+  );
+}
+
+// Small helper component to fetch and render the local animation JSON at runtime.
+function AnimationLoader() {
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    let mounted = true;
+    // Fetch the exact filename the user provided. Use encodeURI to handle spaces.
+    const url = encodeURI('/assets/lottie/Typing Guy.json');
+
+    (async () => {
+      try {
+        const r = await fetch(url);
+        if (!r.ok) throw new Error('Animation not found: ' + r.status);
+        const json = await r.json();
+        if (mounted) setAnimationData(json);
+      } catch (err) {
+        // Log to console to help debugging; do not throw (animation is optional)
+        // eslint-disable-next-line no-console
+        console.warn('Lottie animation failed to load:', err);
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  if (!animationData) return null;
+
+  return (
+    <Lottie
+      animationData={animationData}
+      loop={true}
+      autoplay={true}
+      aria-hidden={true}
+    />
   );
 }

@@ -10,7 +10,7 @@ import {
   SiMysql,
   SiGit,
 } from 'react-icons/si';
-import { FaCoffee } from 'react-icons/fa';
+import { FaCoffee, FaJava } from 'react-icons/fa';
 
 // Add or remove skills here
 // "level" is a value from 0-100 used for the progress bar
@@ -18,13 +18,13 @@ import { FaCoffee } from 'react-icons/fa';
 export const skills = [
   {
     name: 'Java',
-    icon: <FaCoffee />,
+    icon: <FaJava />,
     level: 90,
   },
   {
     name: 'Spring Boot',
     icon: <SiSpringboot />,
-    level: 80,
+    level: 90,
   },
   {
     name: 'Flutter',
@@ -39,12 +39,12 @@ export const skills = [
   {
     name: 'JavaScript',
     icon: <SiJavascript />,
-    level: 85,
+    level: 95,
   },
   {
     name: 'React.js',
     icon: <SiReact />,
-    level: 80,
+    level: 90,
   },
   {
     name: 'HTML5',
@@ -59,7 +59,7 @@ export const skills = [
   {
     name: 'Firebase',
     icon: <SiFirebase />,
-    level: 85,
+    level: 100,
   },
   {
     name: 'SQL (MySQL)',

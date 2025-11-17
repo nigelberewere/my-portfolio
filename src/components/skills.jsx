@@ -1,6 +1,8 @@
 import AnimatedSection from './AnimatedSection';
 import { skills } from '../data/skills.jsx';
 import { skillsParticles } from '../data/particlesPresets';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver.js';
+import { useMemo } from 'react';
 
 const levelLabel = (value) => {
   if (value >= 90) return 'Expert';
@@ -9,7 +11,7 @@ const levelLabel = (value) => {
   return 'Familiar';
 };
 
-const SkillBar = ({ skill }) => (
+const SkillBar = ({ skill, active, index }) => (
   <div className="w-full">
     <div className="mb-2 flex items-center justify-between">
       <div className="flex items-center gap-2">
@@ -23,21 +25,34 @@ const SkillBar = ({ skill }) => (
 
     <div className="h-3 w-full overflow-hidden rounded-full bg-panel">
       <div
-        className="h-full rounded-full bg-accent transition-all duration-1000"
-        style={{ width: `${skill.level}%` }}
+        className="h-full rounded-full bg-accent relative overflow-hidden origin-left"
+        style={{
+          width: `${skill.level}%`,
+          transformOrigin: 'left',
+          transform: active ? 'scaleX(1)' : 'scaleX(0)',
+          transition: `transform 1400ms cubic-bezier(.2,.8,.2,1) ${index * 120}ms`,
+        }}
         aria-hidden
-      />
+      >
+        <div className="skill-fill-wave absolute inset-0 pointer-events-none" />
+      </div>
     </div>
   </div>
 );
 
 export default function Skills() {
+  // Observe the skills grid and trigger the fill animation once when visible
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
+
+  // compute active state per skill only when visible to avoid reflows
+  const active = useMemo(() => isVisible, [isVisible]);
+
   return (
     <AnimatedSection id="skills" particlesOptions={skillsParticles}>
       <h2 className="section-heading">Skills</h2>
-      <div className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
-        {skills.map((skill) => (
-          <SkillBar key={skill.name} skill={skill} />
+      <div ref={ref} className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
+        {skills.map((skill, i) => (
+          <SkillBar key={skill.name} skill={skill} active={active} index={i} />
         ))}
       </div>
     </AnimatedSection>

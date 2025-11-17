@@ -85,6 +85,35 @@
     50% { transform: translateX(0%); opacity: 0.12; }
     100% { transform: translateX(110%); opacity: 0; }
   }
+
+  /* Skill bar water-fill effect */
+  .skill-fill-inactive {
+    width: 0% !important;
+  }
+
+  .skill-fill-active {
+    /* width controlled inline via style attribute to respect skill level */
+  }
+
+  .skill-fill-wave {
+    /* subtle moving sheen to emulate liquid surface */
+    background: linear-gradient(
+      120deg,
+      rgba(255,255,255,0.08) 0%,
+      rgba(255,255,255,0.04) 50%,
+      rgba(255,255,255,0.08) 100%
+    );
+    background-size: 200% 100%;
+    mix-blend-mode: overlay;
+    opacity: 0.9;
+    animation: wave 3s linear infinite;
+    border-radius: inherit;
+  }
+
+  @keyframes wave {
+    from { background-position: 0% 0%; }
+    to { background-position: 200% 0%; }
+  }
 }
 
 @media print, (prefers-reduced-motion: reduce) {

@@ -64,9 +64,15 @@ export default function Header() {
       }`}
     >
       <nav className="container mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        {/* Left: Logo/Name */}
-        <a href="#" className="text-lg font-bold text-heading">
-          Nigel Berewere
+        {/* Left: Logo/Name with responsive GIF behind text */}
+        <a href="#" className="relative flex items-center text-lg font-bold text-heading">
+          <img
+            src="/assets/icon/responsive.gif"
+            alt=""
+            aria-hidden="true"
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 object-contain pointer-events-none"
+          />
+          <span className="ml-12">Nigel Berewere</span>
         </a>
 
         {/* Center: Desktop Nav */}

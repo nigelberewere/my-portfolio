@@ -8,8 +8,9 @@
   --color-bg: #0d1117;
   --color-text: #c9d1d9;
   --color-heading: #ffffff;
-  --color-accent: #00ffc6; /* Neon Cyan */
-  --color-accent-hover: #00e6b4;
+  /* Use a more accessible green for dark backgrounds (Tailwind green-500 / green-600 pair) */
+  --color-accent: #10b981; /* Accessible green */
+  --color-accent-hover: #059669;
   --color-panel: #161b22;
   --color-panel-border: #30363d;
   --color-success: #238636;

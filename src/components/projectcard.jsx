@@ -13,10 +13,8 @@ export default function ProjectCard({ project, reverse, onProjectClick }) {
   const deviceColClasses = isLargeCard ? 'flex-1 flex items-center justify-center md:flex-none md:w-3/5 lg:w-3/5' : 'flex-1 flex items-center justify-center md:flex-none md:w-1/2 lg:w-2/5';
   const detailColClasses = isLargeCard ? 'flex-1 md:w-2/5 lg:w-2/5 flex flex-col justify-center' : 'flex-1 md:w-1/2 lg:w-3/5 flex flex-col justify-center';
 
-  return (
-    <div
-      className={`flex flex-col gap-6 md:flex-row md:gap-10 ${reverse ? 'md:flex-row-reverse' : ''}`}
-    >
+  const content = (
+    <div className={`flex flex-col gap-6 md:flex-row md:gap-10 ${reverse ? 'md:flex-row-reverse' : ''}`}>
       {/* Device preview */}
       <div className={deviceColClasses}>
         <DeviceFrame
@@ -85,5 +83,20 @@ export default function ProjectCard({ project, reverse, onProjectClick }) {
         </div>
       </div>
     </div>
+  );
+
+  return (
+    <>
+      {/* Mobile: plain content without tile */}
+      <div className="block md:hidden">{content}</div>
+
+      {/* Desktop/tablet: tiled glass panel */}
+      <div
+        tabIndex={0}
+        className="hidden md:block rounded-xl border border-panel-border bg-panel/60 backdrop-blur-md p-10 md:p-12 lg:p-14 transition-shadow transform-gpu transition-transform hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+      >
+        {content}
+      </div>
+    </>
   );
 }

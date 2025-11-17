@@ -22,27 +22,6 @@ export const featuredProjects = [
         value:
           'Teachers can manage courses, enter grades, and track attendance. Students and parents can log in to view results, download report cards, and communicate with staff. The system is fully centralized with a MySQL database.',
       },
-      {
-        type: 'code',
-        lang: 'java',
-        value: `// Example: Spring Boot controller for fetching student results
-@RestController
-@RequestMapping("/api/v1/students")
-public class StudentController {
-
-    @Autowired
-    private StudentService studentService;
-
-    @GetMapping("/{studentId}/results")
-    @PreAuthorize("hasRole('STUDENT') or hasRole('ADMIN')")
-    public ResponseEntity<List<Result>> getStudentResults(@PathVariable Long studentId) {
-        // Check if authenticated user is allowed to see these results
-        // ...
-        List<Result> results = studentService.getResultsForStudent(studentId);
-        return ResponseEntity.ok(results);
-    }
-}`,
-      },
     ],
     impact:
       'Adopted by two local schools, resulting in a ~70% reduction in administrative errors. It provided parents with real-time access to their children\'s academic performance, and teachers reported saving an average of 5 hours per week on grading and reporting.',
