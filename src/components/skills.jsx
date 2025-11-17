@@ -1,6 +1,5 @@
 import AnimatedSection from './AnimatedSection';
 import { skills } from '../data/skills.jsx';
-import { skillsParticles } from '../data/particlesPresets';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver.js';
 import { useMemo } from 'react';
 
@@ -48,7 +47,7 @@ export default function Skills() {
   const active = useMemo(() => isVisible, [isVisible]);
 
   return (
-    <AnimatedSection id="skills" particlesOptions={skillsParticles}>
+    <AnimatedSection id="skills">
       <h2 className="section-heading">Skills</h2>
       <div ref={ref} className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
         {skills.map((skill, i) => (

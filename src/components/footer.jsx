@@ -5,8 +5,6 @@ import {
   FaTwitter,
   FaInstagram,
   FaFacebook,
-  FaYoutube,
-  FaMedium,
   FaEnvelope,
 } from 'react-icons/fa';
 
@@ -91,36 +89,6 @@ export default function Footer() {
               }}
             >
               <FaFacebook size={20} />
-            </a>
-          )}
-          {siteConfig.links?.youtube && (
-            <a
-              href={siteConfig.links.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube Channel"
-              className="text-text transition-colors hover:text-accent cursor-pointer pointer-events-auto"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open(siteConfig.links.youtube, '_blank', 'noopener,noreferrer');
-              }}
-            >
-              <FaYoutube size={20} />
-            </a>
-          )}
-          {siteConfig.links?.medium && (
-            <a
-              href={siteConfig.links.medium}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Medium Profile"
-              className="text-text transition-colors hover:text-accent cursor-pointer pointer-events-auto"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open(siteConfig.links.medium, '_blank', 'noopener,noreferrer');
-              }}
-            >
-              <FaMedium size={20} />
             </a>
           )}
           {siteConfig.email && (

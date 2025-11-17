@@ -2,7 +2,7 @@ import AnimatedSection from './AnimatedSection';
 import { otherProjects } from '../data/projects.js';
 import { FiGithub } from 'react-icons/fi';
 
-export default function OtherProjects({ onProjectClick }) {
+export default function OtherProjects() {
   return (
     <AnimatedSection id="other-projects" className="py-20 md:py-28">
       <h2 className="section-heading">Other Projects</h2>

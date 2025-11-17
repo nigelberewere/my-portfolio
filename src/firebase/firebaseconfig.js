@@ -25,6 +25,7 @@ let analytics = null;
 try {
   analytics = getAnalytics(app);
 } catch (e) {
+  // Analytics not available (e.g., ad blockers)
 }
 
 const db = getFirestore(app);

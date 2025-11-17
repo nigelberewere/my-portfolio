@@ -10,7 +10,7 @@ import {
   SiMysql,
   SiGit,
 } from 'react-icons/si';
-import { FaCoffee, FaJava } from 'react-icons/fa';
+import { FaJava } from 'react-icons/fa';
 
 // Add or remove skills here
 // "level" is a value from 0-100 used for the progress bar

@@ -1,5 +1,4 @@
 import AnimatedSection from './AnimatedSection';
-import { aboutParticles } from '../data/particlesPresets';
 import { TypeAnimation } from 'react-type-animation';
 import { siteConfig } from '../data/config';
 
@@ -10,7 +9,7 @@ Notable projects: School Portal (student management), Intern↔Company Connector
 I care about clean architecture, accessibility, and performant UX. I enjoy collaborating on real-world solutions and publishing maintainable code.`;
 
   return (
-    <AnimatedSection id="about" particlesOptions={aboutParticles}>
+    <AnimatedSection id="about">
       <h2 className="section-heading">About Me</h2>
 
       <div className="flex flex-col items-center gap-8">

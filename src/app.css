@@ -80,12 +80,6 @@
 
   /* particles are rendered via canvas and positioned with inline class (-z-10) */
 
-  @keyframes shimmer {
-    0% { transform: translateX(-110%); opacity: 0; }
-    50% { transform: translateX(0%); opacity: 0.12; }
-    100% { transform: translateX(110%); opacity: 0; }
-  }
-
   /* Skill bar water-fill effect */
   .skill-fill-inactive {
     width: 0% !important;

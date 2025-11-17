@@ -4,7 +4,6 @@ import Lottie from 'lottie-react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import { FiArrowDown } from 'react-icons/fi';
-import { siteConfig } from '../data/config';
 
 const particlesConfig = {
   fpsLimit: 60,
@@ -202,7 +201,6 @@ function AnimationLoader() {
         if (mounted) setAnimationData(json);
       } catch (err) {
         // Log to console to help debugging; do not throw (animation is optional)
-        // eslint-disable-next-line no-console
         console.warn('Lottie animation failed to load:', err);
       }
     })();

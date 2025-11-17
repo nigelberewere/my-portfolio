@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ThemeProvider } from './hooks/usetheme.jsx';
 import Header from './components/header';
@@ -9,7 +9,8 @@ import FeaturedProjects from './components/featuredprojects';
 import OtherProjects from './components/otherprojects';
 import Contact from './components/contact';
 import Footer from './components/footer';
-import ProjectModal from './components/projectmodal';
+// Lazy load the heavy modal component (code-split until needed)
+const ProjectModal = lazy(() => import('./components/projectmodal'));
 
 function App() {
   const [modalProject, setModalProject] = useState(null);
@@ -29,7 +30,7 @@ function App() {
       <>
         <Helmet>
           <title>Nigel Berewere — Full-Stack Developer & Computer Science Student</title>
-          <meta name="description" content="Portfolio of Nigel Berewere, a Computer Science student and Full-Stack Developer from Zimbabwe. Specializes in Flutter, Firebase, React, and Java. Available for freelance and remote opportunities." />
+          <meta name="description" content="Full‑stack developer building web & mobile apps with Flutter, React, Firebase, and Java. Open to freelance and remote opportunities." />
           <meta name="keywords" content="Nigel Berewere, Full-Stack Developer, Flutter, Firebase, React, Java, Portfolio, Zimbabwe, Computer Science" />
           <meta name="author" content="Nigel Berewere" />
           <meta name="robots" content="index, follow" />
@@ -40,7 +41,7 @@ function App() {
 
           {/* Open Graph */}
           <meta property="og:title" content="Nigel Berewere — Full-Stack Developer & Computer Science Student" />
-          <meta property="og:description" content="Portfolio of Nigel Berewere, Computer Science student and Full-Stack Developer from Zimbabwe." />
+          <meta property="og:description" content="Full‑stack developer building web & mobile apps with Flutter, React, Firebase, and Java." />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://nigelberewere.me/" />
           <meta property="og:image" content="https://nigelberewere.me/assets/images/og-image.png" />
@@ -50,7 +51,7 @@ function App() {
           {/* Twitter Card */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Nigel Berewere — Full-Stack Developer" />
-          <meta name="twitter:description" content="Portfolio of Nigel Berewere, Computer Science student and Full-Stack Developer from Zimbabwe." />
+          <meta name="twitter:description" content="Full‑stack developer building web & mobile apps with Flutter, React, Firebase, and Java." />
           <meta name="twitter:image" content="https://nigelberewere.me/assets/images/og-image.png" />
 
           {/* Structured data (JSON-LD) */}
@@ -76,13 +77,15 @@ function App() {
           <About />
           <Skills />
           <FeaturedProjects onProjectClick={openModal} />
-          <OtherProjects onProjectClick={openModal} />
+          <OtherProjects />
           <Contact />
         </main>
         <Footer />
         
         {modalProject && (
-          <ProjectModal project={modalProject} onClose={closeModal} />
+          <Suspense fallback={<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">Loading...</div>}>
+            <ProjectModal project={modalProject} onClose={closeModal} />
+          </Suspense>
         )}
         </div>
       </>

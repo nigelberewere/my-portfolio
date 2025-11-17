@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 
 export default function DeviceFrame({ type = 'macbook', src, useIframe = false, title = '' }) {
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [iframeTimedOut, setIframeTimedOut] = useState(false);
   const timeoutRef = useRef(null);
-
-  const IFRAME_WHITELIST = [
-  ];
 
   useEffect(() => {
     // reset state when src/useIframe changes
