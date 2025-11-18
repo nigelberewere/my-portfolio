@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { siteConfig } from '../data/config';
 import ThemeToggle from './ThemeToggle';
+import { useTheme } from '../hooks/usetheme.jsx';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
 
@@ -54,6 +55,12 @@ export default function Header() {
     window.scrollTo({ top, behavior: 'smooth' });
   };
 
+  const { theme } = useTheme();
+
+  const logoSrc = theme === 'dark'
+    ? '/assets/NB-logo/vector/default-monochrome-white.svg'
+    : '/assets/NB-logo/vector/default-monochrome-black.svg';
+
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300
@@ -64,15 +71,14 @@ export default function Header() {
       }`}
     >
       <nav className="container mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        {/* Left: Logo/Name with responsive GIF behind text */}
-        <a href="#" className="relative flex items-center text-lg font-bold text-heading">
+        {/* Left: Logo/Name using NB logo assets */}
+        <a href="#" className="flex items-center text-lg font-bold text-heading">
           <img
-            src="/assets/icon/responsive.gif"
-            alt="responsive coding sign indicator"
-            aria-hidden="true"
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 object-contain pointer-events-none"
+            src={logoSrc}
+            alt="Nigel Berewere logo"
+            className="mr-3 w-10 h-10 object-contain"
           />
-          <span className="ml-12">Nigel Berewere</span>
+          <span>Nigel Berewere</span>
         </a>
 
         {/* Center: Desktop Nav */}
