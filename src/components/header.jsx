@@ -68,7 +68,7 @@ export default function Header() {
         <a href="#" className="relative flex items-center text-lg font-bold text-heading">
           <img
             src="/assets/icon/responsive.gif"
-            alt=""
+            alt="responsive coding sign indicator"
             aria-hidden="true"
             className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 object-contain pointer-events-none"
           />
