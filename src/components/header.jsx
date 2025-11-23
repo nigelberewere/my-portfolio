@@ -71,7 +71,7 @@ export default function Header() {
       }`}
     >
       <nav className="container mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        {/* Left: Logo/Name using NB logo assets */}
+       
         <a href="#" className="flex items-center text-lg font-bold text-heading">
           <img
             src={logoSrc}
@@ -81,7 +81,6 @@ export default function Header() {
           <span>Nigel Berewere</span>
         </a>
 
-        {/* Center: Desktop Nav */}
         <div className="hidden items-center space-x-2 md:flex">
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href} onClick={(e) => scrollToHash(e, link.href)}>
@@ -90,7 +89,6 @@ export default function Header() {
           ))}
         </div>
 
-        {/* Right: Socials & Theme Toggle */}
         <div className="hidden items-center space-x-4 md:flex">
           <a
             href={siteConfig.links.github}
@@ -113,7 +111,6 @@ export default function Header() {
           <ThemeToggle />
         </div>
 
-        {/* Mobile Menu Button */}
         <div className="flex items-center md:hidden">
           <ThemeToggle />
           <button

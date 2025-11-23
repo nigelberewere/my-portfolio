@@ -121,13 +121,14 @@ export const featuredProjects = [
 // --- OTHER PROJECTS ---
 export const otherProjects = [
   {
-    id: 'other-1',
-    title: 'Simple E-commerce API',
+    id: 'POS-System',
+    title: 'Modern POS System',
     description:
-      'A RESTful API for a basic e-commerce site built with Java and Spring Boot, featuring product, cart, and order endpoints.',
-    tags: ['Java', 'Spring Boot', 'API', 'MySQL'],
+      'A point-of-sale system for small businesses, featuring inventory management, sales tracking, and reporting.',
+    tags: ['Javascript', 'Vite', 'Tailwind CSS', 'React', 'PostGreSQL', 'Node.js', 'Express'],
     links: {
-      repo: 'https://github.com/nigelberewere',
+      repo: 'https://github.com/nigelberewere/POS-System',
+      demo: 'https://github.com/nigelberewere/POS-System',
     },
   },
   {
@@ -143,7 +144,7 @@ export const otherProjects = [
   },
   {
     id: 'puzzle-arcade',
-    title: 'Puzzle Arcade (Flutter)',
+    title: 'Puzzle Arcade',
     description:
       'A mobile arcade of casual puzzle games built with Flutter. Includes Sudoku, Nonogram, Futoshi and several bite-sized logic games with local leaderboards and user profiles.',
     tags: ['Flutter', 'Dart', 'GameDev', 'Firebase'],
