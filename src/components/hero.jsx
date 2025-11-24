@@ -119,19 +119,26 @@ export default function Hero() {
           <h1 className="sr-only">Nigel Berewere - Full-Stack Developer (Java, Flutter, React)</h1>
           {/* --- SEO FIX END --- */}
 
-          <TypeAnimation
-            sequence={[
-              "> hi, i'm Nigel Berewere",
-              2000,
-              "> full-stack developer (html, css, js, java, flutter)",
-              2000,
-            ]}
-            wrapper="span" /* Changed from 'h1' to 'span' to avoid duplicate H1s */
-            speed={50}
-            className="font-mono font-bold text-2xl text-accent md:text-4xl"
-            repeat={Infinity}
-            cursor={true}
-          />
+          <div className="grid place-items-center">
+            {/* Invisible placeholder to reserve space for the longest text + cursor */}
+            <span className="invisible col-start-1 row-start-1 font-mono font-bold text-2xl md:text-4xl">
+              &gt; full-stack developer (html, css, js, java, flutter)|
+            </span>
+
+            <TypeAnimation
+              sequence={[
+                "> hi, i'm Nigel Berewere",
+                2000,
+                "> full-stack developer (html, css, js, java, flutter)",
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              className="col-start-1 row-start-1 font-mono font-bold text-2xl text-accent md:text-4xl"
+              repeat={Infinity}
+              cursor={true}
+            />
+          </div>
         </div>
 
         {/* Lottie animation: keyboard with hands typing. */}
