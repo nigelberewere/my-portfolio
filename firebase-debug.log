@@ -1,0 +1,121 @@
+[debug] [2025-11-25T05:32:57.521Z] ----------------------------------------------------------------------
+[debug] [2025-11-25T05:32:57.532Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\nigel\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-11-25T05:32:57.533Z] CLI Version:   14.25.0
+[debug] [2025-11-25T05:32:57.534Z] Platform:      win32
+[debug] [2025-11-25T05:32:57.534Z] Node Version:  v22.13.1
+[debug] [2025-11-25T05:32:57.535Z] Time:          Tue Nov 25 2025 07:32:57 GMT+0200 (Central Africa Time)
+[debug] [2025-11-25T05:32:57.536Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-25T05:32:58.004Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-11-25T05:32:58.005Z] > authorizing via signed-in user (nigelberewere@gmail.com)
+[debug] [2025-11-25T05:32:58.005Z] [iam] checking project nigelberewereportfolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-11-25T05:32:58.008Z] Checked if tokens are valid: false, expires at: 1763992839558
+[debug] [2025-11-25T05:32:58.008Z] Checked if tokens are valid: false, expires at: 1763992839558
+[debug] [2025-11-25T05:32:58.009Z] > refreshing access token with scopes: []
+[debug] [2025-11-25T05:32:58.014Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-11-25T05:32:58.014Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-25T05:32:58.782Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-11-25T05:32:58.783Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-25T05:32:58.811Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nigelberewereportfolio:testIamPermissions [none]
+[debug] [2025-11-25T05:32:58.812Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nigelberewereportfolio:testIamPermissions x-goog-quota-user=projects/nigelberewereportfolio
+[debug] [2025-11-25T05:32:58.812Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nigelberewereportfolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-11-25T05:33:01.184Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nigelberewereportfolio:testIamPermissions 200
+[debug] [2025-11-25T05:33:01.185Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nigelberewereportfolio:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-11-25T05:33:01.187Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:01.187Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:01.188Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nigelberewereportfolio [none]
+[debug] [2025-11-25T05:33:02.403Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nigelberewereportfolio 200
+[debug] [2025-11-25T05:33:02.403Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nigelberewereportfolio {"projectId":"nigelberewereportfolio","projectNumber":"174122977912","displayName":"nigelberewere","name":"projects/nigelberewereportfolio","resources":{"hostingSite":"nigelberewereportfolio"},"state":"ACTIVE","etag":"1_04155cda-925b-44fa-b51c-4211723e97ba"}
+[info] 
+[info] === Deploying to 'nigelberewereportfolio'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-11-25T05:33:02.418Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:02.418Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:02.418Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/versions [none]
+[debug] [2025-11-25T05:33:02.418Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-11-25T05:33:04.895Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/versions 200
+[debug] [2025-11-25T05:33:04.896Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/versions {"name":"projects/174122977912/sites/nigelberewereportfolio/versions/845b774846a796d1","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[nigelberewereportfolio]: beginning deploy... 
+[info] i  hosting[nigelberewereportfolio]: found 21 files in dist 
+[debug] [2025-11-25T05:33:04.984Z] [hosting] uploading with 200 concurrency
+[debug] [2025-11-25T05:33:05.184Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:05.185Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:05.195Z] [hosting] hash cache [ZGlzdA] stored for 21 files
+[debug] [2025-11-25T05:33:05.197Z] [hosting][hash queue][FINAL] {"max":169,"min":3,"avg":33.38095238095238,"active":0,"complete":21,"success":21,"errored":0,"retried":0,"total":21,"elapsed":202}
+[debug] [2025-11-25T05:33:05.201Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/174122977912/sites/nigelberewereportfolio/versions/845b774846a796d1:populateFiles [none]
+[debug] [2025-11-25T05:33:05.202Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/174122977912/sites/nigelberewereportfolio/versions/845b774846a796d1:populateFiles {"files":{"/sitemap.xml":"2b6f5cd114908cf5d64ca38e80493382fa948530db29bf4e578acc00d9123644","/robots.txt":"efdc26cca8226b1a56f8f37c8d0b4b0e3ef1c0f5578eb7dc51f09f4beba072e1","/manifest.json":"096e3cbf3056b661a5487e6fd481c55c546fec0c8b0104145787daf54875fc1b","/assets/NB-logo/profile.png":"8c2316a8ec6cf291b42bac80a717ac41be13b98e5fea5794e9d940b7bd15d3fe","/assets/NB-logo/cover.png":"694bc9cc3312d192c9f3a7fea851deceb66f549f6f45b760f035b3d810738573","/assets/NB-logo/vector/default-monochrome.svg":"cf3f95db15b68f2116c3aa171ad773a84da5653868889169d5a80157279c248e","/assets/NB-logo/vector/default-monochrome-white.svg":"18f0600e0b6adb6827aa3e6bb681a06f48ae7dd78cc0e01a81c3e7c14261a72b","/assets/NB-logo/vector/default-monochrome-black.svg":"cf8273832d3a14342f38793e106aa42899e7b6f64e051beb92415881230db4ac","/assets/lottie/Typing Guy.json":"59a99403d1a557d28acfa2b9d823ac632768ae6903fcebfca61d5e81c2f9da65","/assets/images/og-image.png":"ef12e3c279c7ba4dd857286e0a55ed0e5ee8638dab1d54337b461f569231e3fd","/assets/images/numbers.jpg":"69ba3f649ab5b307386c27851ac995de8a4ddc336fc51e6fabc1fe8fca4b623a","/assets/images/dashboard_light.png":"6b5552eba9f163230c96f6f5e49ca0d3e05bc2b4fcf41b41917dbc04934e00a5","/assets/images/dashboard_dark.png":"e49d89099a48822a43800e459c3478a9adb579de82202c0d6937836e6f8db9bd","/index.html":"97a6e7f28e0a53014007fe22128f12e159fa3d49555171292904c7b0fe45f499","/assets/projectmodal-BVrz1HZF.js":"77048b7ffedb8aca7c5dc1f331c45f44cc5869bcc2b9c5a52219a742b8cefe25","/assets/index-BEM34qWr.css":"e04f808565ead1ec95e074151f0dd54d77dc78595c33b85c985535ced706ab8d","/assets/icons-BfgHVwI4.js":"1e7e57776dc41318315ddfbddfc4105a84af9b97fe76f3a50e496f9b258d6d48","/assets/index-SIVEr7ep.js":"db90ddf79b993f967b9adf23c7cfe1d409f7c405426b8f03e0cd544d3b8e54ac","/assets/react-vendor-BeLAKD_z.js":"ba236321f3ff649dde8622309c0b169b3e30bed11ef639a6508767a455fbca6a","/assets/firebase-BXKvFKqN.js":"70cf3aba2dfad78239405e5ce2754201b3cccaf980f6a617bd0ac514880900e2","/assets/animation-Z8Ij1_Yu.js":"753beb1798273202c540f674a3c5d18fc17686a71994c4b251dc1be23f11df53"}}
+[debug] [2025-11-25T05:33:05.665Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/174122977912/sites/nigelberewereportfolio/versions/845b774846a796d1:populateFiles 200
+[debug] [2025-11-25T05:33:05.665Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/174122977912/sites/nigelberewereportfolio/versions/845b774846a796d1:populateFiles {"uploadRequiredHashes":["97a6e7f28e0a53014007fe22128f12e159fa3d49555171292904c7b0fe45f499","db90ddf79b993f967b9adf23c7cfe1d409f7c405426b8f03e0cd544d3b8e54ac","77048b7ffedb8aca7c5dc1f331c45f44cc5869bcc2b9c5a52219a742b8cefe25"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files"}
+[debug] [2025-11-25T05:33:05.669Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:05.669Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:05.670Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:05.671Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:05.672Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:05.672Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:05.672Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/97a6e7f28e0a53014007fe22128f12e159fa3d49555171292904c7b0fe45f499 [none]
+[debug] [2025-11-25T05:33:05.673Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/97a6e7f28e0a53014007fe22128f12e159fa3d49555171292904c7b0fe45f499 [stream]
+[debug] [2025-11-25T05:33:05.679Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/db90ddf79b993f967b9adf23c7cfe1d409f7c405426b8f03e0cd544d3b8e54ac [none]
+[debug] [2025-11-25T05:33:05.679Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/db90ddf79b993f967b9adf23c7cfe1d409f7c405426b8f03e0cd544d3b8e54ac [stream]
+[debug] [2025-11-25T05:33:05.687Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/77048b7ffedb8aca7c5dc1f331c45f44cc5869bcc2b9c5a52219a742b8cefe25 [none]
+[debug] [2025-11-25T05:33:05.688Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/77048b7ffedb8aca7c5dc1f331c45f44cc5869bcc2b9c5a52219a742b8cefe25 [stream]
+[debug] [2025-11-25T05:33:05.696Z] [hosting][populate queue][FINAL] {"max":489,"min":489,"avg":489,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":513}
+[debug] [2025-11-25T05:33:05.698Z] [hosting] uploads queued: 3
+[debug] [2025-11-25T05:33:07.992Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/db90ddf79b993f967b9adf23c7cfe1d409f7c405426b8f03e0cd544d3b8e54ac 200
+[debug] [2025-11-25T05:33:07.993Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/db90ddf79b993f967b9adf23c7cfe1d409f7c405426b8f03e0cd544d3b8e54ac [stream]
+[debug] [2025-11-25T05:33:07.998Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/77048b7ffedb8aca7c5dc1f331c45f44cc5869bcc2b9c5a52219a742b8cefe25 200
+[debug] [2025-11-25T05:33:07.999Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/77048b7ffedb8aca7c5dc1f331c45f44cc5869bcc2b9c5a52219a742b8cefe25 [stream]
+[debug] [2025-11-25T05:33:08.006Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/97a6e7f28e0a53014007fe22128f12e159fa3d49555171292904c7b0fe45f499 200
+[debug] [2025-11-25T05:33:08.006Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nigelberewereportfolio/versions/845b774846a796d1/files/97a6e7f28e0a53014007fe22128f12e159fa3d49555171292904c7b0fe45f499 [stream]
+[debug] [2025-11-25T05:33:08.007Z] [hosting][upload queue][FINAL] {"max":2340,"min":2323,"avg":2330.6666666666665,"active":0,"complete":3,"success":3,"errored":0,"retried":0,"total":3,"elapsed":2340}
+[info] +  hosting[nigelberewereportfolio]: file upload complete 
+[debug] [2025-11-25T05:33:08.012Z] [hosting] deploy completed after 3106ms
+[debug] [2025-11-25T05:33:08.014Z] [
+  {
+    "config": {
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "nigelberewereportfolio"
+    },
+    "version": "projects/174122977912/sites/nigelberewereportfolio/versions/845b774846a796d1"
+  }
+]
+[info] i  hosting[nigelberewereportfolio]: finalizing version... 
+[debug] [2025-11-25T05:33:08.029Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:08.030Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:08.032Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/versions/845b774846a796d1 updateMask=status%2Cconfig
+[debug] [2025-11-25T05:33:08.032Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/versions/845b774846a796d1 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2025-11-25T05:33:08.446Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/versions/845b774846a796d1 200
+[debug] [2025-11-25T05:33:08.446Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/versions/845b774846a796d1 {"name":"projects/174122977912/sites/nigelberewereportfolio/versions/845b774846a796d1","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-11-25T05:34:20.893226Z","createUser":{"email":"nigelberewere@gmail.com"},"finalizeTime":"2025-11-25T05:34:24.740034Z","finalizeUser":{"email":"nigelberewere@gmail.com"}}
+[debug] [2025-11-25T05:33:08.447Z] [hosting] finalized version for nigelberewereportfolio:[object Object]
+[info] +  hosting[nigelberewereportfolio]: version finalized 
+[info] i  hosting[nigelberewereportfolio]: releasing new version... 
+[debug] [2025-11-25T05:33:08.451Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:08.451Z] Checked if tokens are valid: true, expires at: 1764052377783
+[debug] [2025-11-25T05:33:08.452Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/channels/live/releases versionName=projects%2F174122977912%2Fsites%2Fnigelberewereportfolio%2Fversions%2F845b774846a796d1
+[debug] [2025-11-25T05:33:08.452Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/channels/live/releases {}
+[debug] [2025-11-25T05:33:09.015Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/channels/live/releases 200
+[debug] [2025-11-25T05:33:09.015Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nigelberewereportfolio/channels/live/releases {"name":"projects/174122977912/sites/nigelberewereportfolio/channels/live/releases/1764048864696000","version":{"name":"projects/174122977912/sites/nigelberewereportfolio/versions/845b774846a796d1","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-11-25T05:34:20.893226Z","createUser":{"email":"nigelberewere@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocI8ARECDtshLQ-1LIhpk5aFe_m_XDOvciv9yQPqH-yynhP8W3ztlw"},"finalizeTime":"2025-11-25T05:34:24.740034Z","finalizeUser":{"email":"nigelberewere@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocI8ARECDtshLQ-1LIhpk5aFe_m_XDOvciv9yQPqH-yynhP8W3ztlw"}},"type":"DEPLOY","releaseTime":"2025-11-25T05:34:24.696Z","releaseUser":{"email":"nigelberewere@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocI8ARECDtshLQ-1LIhpk5aFe_m_XDOvciv9yQPqH-yynhP8W3ztlw"}}
+[debug] [2025-11-25T05:33:09.016Z] [hosting] release: {"name":"projects/174122977912/sites/nigelberewereportfolio/channels/live/releases/1764048864696000","version":{"name":"projects/174122977912/sites/nigelberewereportfolio/versions/845b774846a796d1","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-11-25T05:34:20.893226Z","createUser":{"email":"nigelberewere@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocI8ARECDtshLQ-1LIhpk5aFe_m_XDOvciv9yQPqH-yynhP8W3ztlw"},"finalizeTime":"2025-11-25T05:34:24.740034Z","finalizeUser":{"email":"nigelberewere@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocI8ARECDtshLQ-1LIhpk5aFe_m_XDOvciv9yQPqH-yynhP8W3ztlw"}},"type":"DEPLOY","releaseTime":"2025-11-25T05:34:24.696Z","releaseUser":{"email":"nigelberewere@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocI8ARECDtshLQ-1LIhpk5aFe_m_XDOvciv9yQPqH-yynhP8W3ztlw"}}
+[info] +  hosting[nigelberewereportfolio]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/nigelberewereportfolio/overview
+[info] Hosting URL: https://nigelberewereportfolio.web.app
+[debug] [2025-11-25T05:33:19.087Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\nigel\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:275:49)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+[error] 
+[error] Error: An unexpected error has occurred.
