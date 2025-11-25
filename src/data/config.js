@@ -8,7 +8,7 @@ export const siteConfig = {
   links: {
     github: 'https://github.com/nigelberewere',
     linkedin: 'https://www.linkedin.com/in/nigelberewere/',
-    twitter: 'https://x.com/baby_inertia',
+    twitter: 'https://x.com/lord_inaetia',
     instagram: 'https://www.instagram.com/lord_inaetia/',
     facebook: 'https://www.facebook.com/nigel.berewere/',
   },
