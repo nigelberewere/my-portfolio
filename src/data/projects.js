@@ -85,6 +85,7 @@ export const featuredProjects = [
       'As a personal project, it helped me master Flutter state management and Firebase data structuring. It gained a small user base with positive feedback on its simplicity and design.',
     links: {
       repo: 'https://github.com/nigelberewere/Numbers-App',
+      demo: 'https://numbersapk.web.app/',
     },
   },
   {
